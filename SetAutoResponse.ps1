@@ -15,4 +15,5 @@ $mailboxes.Email | ForEach-Object{
 	Set-MailboxAutoReplyConfiguration -Identity $_ -AutoReplyState Enabled -InternalMessage "This is a test of OOO"
 	echo "Set OOO for User:" $_
 }
+Disconnect-ExchangeOnline -confirm:$false
 pause
