@@ -66,7 +66,7 @@ Connect-ExchangeOnline -Credential $EOLcred
 
 
 $mailboxes.Email | ForEach-Object{
-	Set-MailboxAutoReplyConfiguration -Identity $_ -AutoReplyState Enabled -InternalMessage $global:message
+	Set-MailboxAutoReplyConfiguration -Identity $_ -AutoReplyState Enabled -ExternalMessage $global:message
 	echo "Set OOO for User:" $_
 }
 Disconnect-ExchangeOnline -confirm:$false
